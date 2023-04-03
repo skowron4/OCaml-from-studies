@@ -31,13 +31,6 @@ let lfib =
 
 itake(10, lfib);;
 
-(*let lfib =*)
-(*    let rec lfibIn(p, n) =*)
-(*        LCons(p+n, lazy(lfibIn(n, p+n))) in*)
-(*    LCons(1, lazy(LCons(1, lazy(lfibIn(1, 1)))));;*)
-
-(*itake(15, lfib);;*)
-
 (*zad3*)
 type 'a lBT = LEmpty | LNode of 'a * (unit ->'a lBT) * (unit -> 'a lBT);;
 

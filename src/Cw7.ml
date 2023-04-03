@@ -99,27 +99,6 @@ struct
         queue.arr.(queue.f) = None
 end;;
 
-(*module QueueArray: QUEUE_MUT = struct*)
-(*    type 'a t = {arr: 'a option array; mutable f: int; mutable r: int; size: int}*)
-(*    exception Empty of string*)
-(*    exception Full of string*)
-(*    exception NotPositiveSize of string*)
-
-(*    let empty s =*)
-(*        if (s<=0) then raise (NotPositiveSize "module: QueueArray fun: empty")*)
-(*        else {arr = Array.make (s + 1) None; f = 0; r = 0; size = s + 1}*)
-(*    let isEmpty q = q.f = q.r*)
-(*    let isFull q = q.f = ((q.r + 1) mod q.size)*)
-(*    let enqueue(elem, q) =*)
-(*        if (isFull q) then raise (Full "module: QueueArray fun: enqueue")*)
-(*        else*)
-(*            q.arr.(q.r) <- Some elem;*)
-(*            q.r <- ((q.r + 1) mod q.size)*)
-(*    let dequeue q = q.f <- ((q.f + 1) mod q.size)*)
-(*    let first q =*)
-(*        if (isEmpty q) then raise (Empty "module: QueueArray fun: first")*)
-(*        else Option.get q.arr.(q.f)*)
-(*end;;*)
 
 let q = (QueueCyclicArray.empty 4);;
 QueueCyclicArray.enqueue (3, q);;

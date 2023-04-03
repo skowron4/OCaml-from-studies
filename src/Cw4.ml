@@ -55,7 +55,7 @@ let depthInner node =
 	let rec depthInnerInner node d =
 		match node with
 		|	Empty -> 0
-		|	Node(value, left, right) -> (depthInnerInner left (d+1)) + (depthInnerInner right (d+1)) + d
+		|	Node(value, left, right) -> (depthInnerInner left (d+1)) + (depthInnerInner right(d+1)) + d
 	in
 	depthInnerInner node 0
 ;;
